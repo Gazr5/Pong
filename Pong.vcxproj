@@ -88,12 +88,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\glebm\source\repos\libraries\SDL2_mixer-2.6.3\include;C:\Users\glebm\source\repos\libraries\SDL2_ttf-2.20.1\include;C:\Users\glebm\source\repos\libraries\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\glebm\source\repos\libraries\boost_1_81_0;C:\Users\glebm\source\repos\libraries\SDL2_mixer-2.6.3\include;C:\Users\glebm\source\repos\libraries\SDL2_ttf-2.20.1\include;C:\Users\glebm\source\repos\libraries\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\glebm\source\repos\libraries\SDL2_mixer-2.6.3\lib\x86;C:\Users\glebm\source\repos\libraries\SDL2_ttf-2.20.1\lib\x86;C:\Users\glebm\source\repos\libraries\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\glebm\source\repos\libraries\boost_1_81_0\libs;C:\Users\glebm\source\repos\libraries\SDL2_mixer-2.6.3\lib\x86;C:\Users\glebm\source\repos\libraries\SDL2_ttf-2.20.1\lib\x86;C:\Users\glebm\source\repos\libraries\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -150,6 +150,7 @@
     <ClCompile Include="game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameRectangle.cpp" />
+    <ClCompile Include="menu.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="score.cpp" />
     <ClCompile Include="main.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameRectangle.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="IObserver.h" />
     <ClInclude Include="ISubject.h" />
     <ClInclude Include="player.h" />

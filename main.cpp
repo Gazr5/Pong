@@ -1,6 +1,6 @@
-#include "game.h"
+#include "menu.h"
 
 int main() {
-	Game game = Game();
-	game.PlayingGame();
+	Menu menu;
+	menu.MainMenu();
 }

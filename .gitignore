@@ -1,0 +1,26 @@
+# Visual Studio build output
+*.exe
+*.dll
+*.pdb
+*.obj
+*.ilk
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+.vs/*
+
+# Debug files
+Debug/*
+*.pdb
+*.map
+
+# User-specific files
+*.suo
+*.user
+*.vspscc
+
+# Compiled libraries
+*.lib
+*.a
+

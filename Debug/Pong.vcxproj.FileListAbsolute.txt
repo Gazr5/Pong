@@ -1,2 +1,0 @@
-C:\Users\glebm\source\repos\Pong\Debug\Pong.exe
-C:\Users\glebm\source\repos\Pong_project\Pong\Debug\Pong.exe

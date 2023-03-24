@@ -13,7 +13,8 @@ class Game : public Subject{
 public:
 	Game();
 
-	void PlayingGame();
+	void PlaySingleGame();
+	void PlayMultiplayerGame(const std::string IP, bool ifHost);
 	void NewRound();
 	void Update();
 	void CheckPlayerControl();
@@ -33,7 +34,7 @@ private:
 	int fps;
 
 	std::unique_ptr<Player> player;
-	std::unique_ptr<AI> ai;
+	std::unique_ptr<AI> anotherPlayer;
 	std::unique_ptr<Ball> ball;
 	std::unique_ptr<Score> score;
 };

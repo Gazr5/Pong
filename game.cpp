@@ -18,19 +18,19 @@ Game::Game(){
 	
 	render_ = std::make_shared<SDL_Renderer*>(renderer);
 	player = std::unique_ptr<Player>(new Player(*this, render_, PADDLESPEED, WINDOWHEIGHT, WINDOWWIDTH));
-	ai = std::unique_ptr<AI>(new AI(*this, render_, PADDLESPEED, WINDOWHEIGHT, WINDOWWIDTH));
+	anotherPlayer = std::unique_ptr<AI>(new AI(*this, render_, PADDLESPEED, WINDOWHEIGHT, WINDOWWIDTH));
 	ball = std::unique_ptr<Ball>(new Ball(*this, render_, BALLSPEED, WINDOWHEIGHT, WINDOWWIDTH));
 	score = std::unique_ptr<Score>(new Score(*this, render_, WINDOWHEIGHT, WINDOWWIDTH));
 
 	Attach(player.get());
-	Attach(ai.get());
+	Attach(anotherPlayer.get());
 	Attach(ball.get());
 	Attach(score.get());
 
 	color.r = color.g = color.b = 255;
 }
 
-void Game::PlayingGame() {
+void Game::PlaySingleGame() {
 	SDL_SetRenderDrawColor(*render_.get(), 0x00, 0x00, 0x00, 255);
 	isRunning = true;
 	static int lastTime = 0;
@@ -51,6 +51,10 @@ void Game::PlayingGame() {
 	EndGame();
 }
 
+void Game::PlayMultiplayerGame(const std::string IP, bool ifHost) {
+
+}
+
 void Game::NewRound() {
 	Mix_PlayChannel(-1, Mix_LoadWAV("win.wav"), 0);
 
@@ -58,9 +62,9 @@ void Game::NewRound() {
 }
 
 void Game::Update() {
-	ai->Move(ball->getRectangle().y, WINDOWHEIGHT);
+	anotherPlayer->Move(ball->getRectangle().y, WINDOWHEIGHT);
 
-	switch (ball->CheckPositionAndIntersection(player->getRectangle(), ai->getRectangle(), WINDOWHEIGHT, WINDOWWIDTH)) {
+	switch (ball->CheckPositionAndIntersection(player->getRectangle(), anotherPlayer->getRectangle(), WINDOWHEIGHT, WINDOWWIDTH)) {
 	case 0:
 		score->AddPointToPlayer();
 		NewRound();
